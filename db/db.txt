@@ -1,0 +1,55 @@
+* postgres docker 설치
+docker run -d -p 5432:5432 --name postgres -v /workspace/app/postgres/pgdata:/var/lib/postgresql/data postgres
+
+* postgres docker shll 접속 
+$ docker exec -it postgres /bin/bash
+
+* psql 명령 실행 (https://yeojin-dev.github.io/blog/postgresql-ubuntu/)
+psql --username=postgres --dbname=postgres
+
+CREATE ROLE teslapsql LOGIN CREATEDB PASSWORD 'input_password_value';
+
+CREATE DATABASE teslapsql OWNER teslapsql;
+
+CREATE TABLE TB_TESLA_LOCATION
+  (
+      sl_translate VARCHAR(10),
+      address_line_1 VARCHAR(500),
+      address_line_2 VARCHAR(500),
+      address_notes VARCHAR(500),
+      address VARCHAR(500),
+      amenities VARCHAR(1000),
+      baidu_lat VARCHAR(20),
+      baidu_lng VARCHAR(20),
+      chargers VARCHAR(500),
+      city VARCHAR(100),
+      common_name VARCHAR(100),
+      country VARCHAR(50),
+      destination_charger_logo VARCHAR(1000),
+      destination_website VARCHAR(255),
+      directions_link VARCHAR(500),
+      emails VARCHAR(500),
+      geocode VARCHAR(50),
+      hours VARCHAR(1000),
+      is_gallery VARCHAR(50),
+      kiosk_pin_x VARCHAR(10),
+      kiosk_pin_y VARCHAR(10),
+      kiosk_zoom_pin_x VARCHAR(50),
+      kiosk_zoom_pin_y VARCHAR(50),
+      latitude VARCHAR(20),
+      location_id VARCHAR(100),
+      location_type VARCHAR(100),
+      longitude VARCHAR(20),
+      nid VARCHAR(10) PRIMARY KEY,
+      open_soon VARCHAR(10),
+      path VARCHAR(100),
+      postal_code VARCHAR(20),
+      province_state VARCHAR(50),
+      region VARCHAR(50),
+      sales_phone VARCHAR(500),
+      sales_representative VARCHAR(50),
+      sub_region VARCHAR(50),
+      title VARCHAR(255),
+      trt_id VARCHAR(10),
+      CREATED_DTTM TIMESTAMP
+  );

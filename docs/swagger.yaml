@@ -1,0 +1,420 @@
+basePath: /
+definitions:
+  main.City:
+    properties:
+      City:
+        type: string
+    type: object
+  main.Citys:
+    properties:
+      Citys:
+        items:
+          $ref: '#/definitions/main.City'
+        type: array
+    type: object
+  main.Country:
+    properties:
+      country:
+        type: string
+    type: object
+  main.Countrys:
+    properties:
+      countrys:
+        items:
+          $ref: '#/definitions/main.Country'
+        type: array
+    type: object
+  main.Location:
+    properties:
+      address:
+        type: string
+      address_line_1:
+        type: string
+      address_line_2:
+        type: string
+      address_notes:
+        type: string
+      amenities:
+        type: string
+      baidu_lat:
+        type: string
+      baidu_lng:
+        type: string
+      chargers:
+        type: string
+      city:
+        type: string
+      common_name:
+        type: string
+      country:
+        type: string
+      created_dttm:
+        type: string
+      destination_charger_logo:
+        type: string
+      destination_website:
+        type: string
+      directions_link:
+        type: string
+      emails:
+        type: string
+      geocode:
+        type: string
+      hours:
+        type: string
+      is_gallery:
+        type: string
+      kiosk_pin_x:
+        type: string
+      kiosk_pin_y:
+        type: string
+      kiosk_zoom_pin_x:
+        type: string
+      kiosk_zoom_pin_y:
+        type: string
+      latitude:
+        type: string
+      location_id:
+        type: string
+      location_type:
+        type: string
+      longitude:
+        type: string
+      nid:
+        type: string
+      open_soon:
+        type: string
+      path:
+        type: string
+      postal_code:
+        type: string
+      province_state:
+        type: string
+      region:
+        type: string
+      sales_phone:
+        type: string
+      sales_representative:
+        type: string
+      sl_translate:
+        type: string
+      sub_region:
+        type: string
+      title:
+        type: string
+      trt_id:
+        type: string
+    type: object
+  main.Location_type:
+    properties:
+      Location_type:
+        type: string
+    type: object
+  main.Location_types:
+    properties:
+      Location_types:
+        items:
+          $ref: '#/definitions/main.Location_type'
+        type: array
+    type: object
+  main.Locations:
+    properties:
+      locations:
+        items:
+          $ref: '#/definitions/main.Location'
+        type: array
+    type: object
+  main.Region:
+    properties:
+      region:
+        type: string
+    type: object
+  main.Regions:
+    properties:
+      regions:
+        items:
+          $ref: '#/definitions/main.Region'
+        type: array
+    type: object
+host: 193.123.252.22:8282
+info:
+  contact:
+    email: devsunset@gmail.com
+    name: API Support
+    url: https://devsunset.github.io
+  description: This is a apiServer.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: apiServer  API
+  version: "1.0"
+paths:
+  /getLocation:
+    get:
+      consumes:
+      - '*/*'
+      description: get tesla Chargers Location.
+      operationId: getLocation
+      parameters:
+      - description: asia_pacific
+        in: query
+        name: region
+        type: string
+      - description: South Korea
+        in: query
+        name: country
+        required: true
+        type: string
+      - description: 서울특별시
+        in: query
+        name: city
+        type: string
+      - description: supercharger
+        in: query
+        name: location_type
+        type: string
+      - description: "28865"
+        in: query
+        name: nid
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Locations'
+      summary: Tesla Chargers Location.
+      tags:
+      - API Tesla App
+  /getLocationCity:
+    get:
+      consumes:
+      - '*/*'
+      description: get tesla Chargers Location City.
+      operationId: getLocationCity
+      parameters:
+      - description: South Korea
+        in: query
+        name: country
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Citys'
+      summary: Tesla Chargers Location City.
+      tags:
+      - API Tesla App
+  /getLocationCountry:
+    get:
+      consumes:
+      - '*/*'
+      description: get tesla Chargers Location Country.
+      operationId: getLocationCountry
+      parameters:
+      - description: asia_pacific
+        in: query
+        name: region
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Countrys'
+      summary: Tesla Chargers Location Country.
+      tags:
+      - API Tesla App
+  /getLocationRegion:
+    get:
+      consumes:
+      - '*/*'
+      description: get tesla Chargers Location Region.
+      operationId: getLocationRegion
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Regions'
+      summary: Tesla Chargers Location Region.
+      tags:
+      - API Tesla App
+  /getLocationType:
+    get:
+      consumes:
+      - '*/*'
+      description: get tesla Chargers Location Type.
+      operationId: getLocationType
+      parameters:
+      - description: South Korea
+        in: query
+        name: country
+        type: string
+      - description: 서울특별시
+        in: query
+        name: city
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Location_types'
+      summary: Tesla Chargers Location Type.
+      tags:
+      - API Tesla App
+  /getPathParameters/{id}:
+    get:
+      consumes:
+      - '*/*'
+      description: get value from path
+      operationId: getPathParameters
+      parameters:
+      - description: "1"
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: example get value from path
+      tags:
+      - Example
+  /getQueryParameters:
+    get:
+      consumes:
+      - '*/*'
+      description: get value from the query string
+      operationId: getQueryParameters
+      parameters:
+      - description: "1"
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: "2"
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: example get value from the query string
+      tags:
+      - Example
+  /healthCheck:
+    get:
+      consumes:
+      - '*/*'
+      description: get the status of server.
+      operationId: HealthCheck
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Show the status of server.
+      tags:
+      - API Tesla App
+  /postSave:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: get value from the form
+      operationId: postSave
+      parameters:
+      - description: "1"
+        in: formData
+        name: id
+        required: true
+        type: string
+      - description: "2"
+        in: formData
+        name: name
+        required: true
+        type: string
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: example get value from the form
+      tags:
+      - Example
+  /postSavefile:
+    post:
+      consumes:
+      - multipart/form-data
+      description: get value/file from the form
+      operationId: postSavefile
+      parameters:
+      - description: "2"
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: '-'
+        in: formData
+        name: avatar
+        required: true
+        type: file
+      produces:
+      - text/plain
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: example get value/file from the form
+      tags:
+      - Example
+  /users:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      description: get value from the form/json
+      operationId: users
+      parameters:
+      - description: "1"
+        in: formData
+        name: id
+        required: true
+        type: string
+      - description: "2"
+        in: formData
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: User
+      summary: example get value from the form/json
+      tags:
+      - Example
+swagger: "2.0"
