@@ -17,3 +17,7 @@
 
 # config.json file exclude (security)
 config/config.json
+
+# logs
+logs/app.log
+logs/batch.log
