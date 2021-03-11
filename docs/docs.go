@@ -473,6 +473,17 @@ var doc = `{
                 }
             }
         },
+        "main.Emails_Data": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                }
+            }
+        },
         "main.Location": {
             "type": "object",
             "properties": {
@@ -509,9 +520,6 @@ var doc = `{
                 "country": {
                     "type": "string"
                 },
-                "created_dttm": {
-                    "type": "string"
-                },
                 "destination_charger_logo": {
                     "type": "string"
                 },
@@ -522,7 +530,10 @@ var doc = `{
                     "type": "string"
                 },
                 "emails": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.Emails_Data"
+                    }
                 },
                 "geocode": {
                     "type": "string"
@@ -552,7 +563,10 @@ var doc = `{
                     "type": "string"
                 },
                 "location_type": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "longitude": {
                     "type": "string"
@@ -576,7 +590,10 @@ var doc = `{
                     "type": "string"
                 },
                 "sales_phone": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.Sales_Phone_Data"
+                    }
                 },
                 "sales_representative": {
                     "type": "string"
@@ -641,6 +658,20 @@ var doc = `{
                     "items": {
                         "$ref": "#/definitions/main.Region"
                     }
+                }
+            }
+        },
+        "main.Sales_Phone_Data": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "line_below": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "string"
                 }
             }
         }

@@ -147,6 +147,8 @@ func getLocationRegion(c echo.Context) error {
 	}
 
 	defer rows.Close()
+	defer db.Close()
+
 	result := Regions{}
 
 	for rows.Next() {
@@ -197,6 +199,8 @@ func getLocationCountry(c echo.Context) error {
 	}
 
 	defer rows.Close()
+	defer db.Close()
+
 	result := Countrys{}
 
 	for rows.Next() {
@@ -247,6 +251,8 @@ func getLocationCity(c echo.Context) error {
 	}
 
 	defer rows.Close()
+	defer db.Close()
+
 	result := Citys{}
 
 	for rows.Next() {
@@ -306,6 +312,8 @@ func getLocationType(c echo.Context) error {
 	}
 
 	defer rows.Close()
+	defer db.Close()
+
 	result := Location_types{}
 
 	for rows.Next() {
@@ -426,6 +434,8 @@ func getLocation(c echo.Context) error {
 	}
 
 	defer rows.Close()
+	defer db.Close()
+
 	result := Locations{}
 
 	for rows.Next() {

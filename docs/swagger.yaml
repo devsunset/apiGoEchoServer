@@ -24,6 +24,13 @@ definitions:
           $ref: '#/definitions/main.Country'
         type: array
     type: object
+  main.Emails_Data:
+    properties:
+      email:
+        type: string
+      label:
+        type: string
+    type: object
   main.Location:
     properties:
       address:
@@ -48,8 +55,6 @@ definitions:
         type: string
       country:
         type: string
-      created_dttm:
-        type: string
       destination_charger_logo:
         type: string
       destination_website:
@@ -57,7 +62,9 @@ definitions:
       directions_link:
         type: string
       emails:
-        type: string
+        items:
+          $ref: '#/definitions/main.Emails_Data'
+        type: array
       geocode:
         type: string
       hours:
@@ -77,7 +84,9 @@ definitions:
       location_id:
         type: string
       location_type:
-        type: string
+        items:
+          type: string
+        type: array
       longitude:
         type: string
       nid:
@@ -93,7 +102,9 @@ definitions:
       region:
         type: string
       sales_phone:
-        type: string
+        items:
+          $ref: '#/definitions/main.Sales_Phone_Data'
+        type: array
       sales_representative:
         type: string
       sl_translate:
@@ -135,6 +146,15 @@ definitions:
         items:
           $ref: '#/definitions/main.Region'
         type: array
+    type: object
+  main.Sales_Phone_Data:
+    properties:
+      label:
+        type: string
+      line_below:
+        type: string
+      number:
+        type: string
     type: object
 host: 193.123.252.22:8282
 info:

@@ -458,6 +458,17 @@
                 }
             }
         },
+        "main.Emails_Data": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                }
+            }
+        },
         "main.Location": {
             "type": "object",
             "properties": {
@@ -494,9 +505,6 @@
                 "country": {
                     "type": "string"
                 },
-                "created_dttm": {
-                    "type": "string"
-                },
                 "destination_charger_logo": {
                     "type": "string"
                 },
@@ -507,7 +515,10 @@
                     "type": "string"
                 },
                 "emails": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.Emails_Data"
+                    }
                 },
                 "geocode": {
                     "type": "string"
@@ -537,7 +548,10 @@
                     "type": "string"
                 },
                 "location_type": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "longitude": {
                     "type": "string"
@@ -561,7 +575,10 @@
                     "type": "string"
                 },
                 "sales_phone": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.Sales_Phone_Data"
+                    }
                 },
                 "sales_representative": {
                     "type": "string"
@@ -626,6 +643,20 @@
                     "items": {
                         "$ref": "#/definitions/main.Region"
                     }
+                }
+            }
+        },
+        "main.Sales_Phone_Data": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "line_below": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "string"
                 }
             }
         }
