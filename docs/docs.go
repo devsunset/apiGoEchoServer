@@ -77,13 +77,19 @@ var doc = `{
                         "description": "28865",
                         "name": "nid",
                         "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "여의도",
+                        "name": "title",
+                        "in": "query"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Locations"
+                            "$ref": "#/definitions/models.Locations"
                         }
                     }
                 }
@@ -115,7 +121,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Citys"
+                            "$ref": "#/definitions/models.Citys"
                         }
                     }
                 }
@@ -147,7 +153,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Countrys"
+                            "$ref": "#/definitions/models.Countrys"
                         }
                     }
                 }
@@ -171,7 +177,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Regions"
+                            "$ref": "#/definitions/models.Regions"
                         }
                     }
                 }
@@ -209,80 +215,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/main.Location_types"
-                        }
-                    }
-                }
-            }
-        },
-        "/getPathParameters/{id}": {
-            "get": {
-                "description": "get value from path",
-                "consumes": [
-                    "*/*"
-                ],
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "Example"
-                ],
-                "summary": "example get value from path",
-                "operationId": "getPathParameters",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "1",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/getQueryParameters": {
-            "get": {
-                "description": "get value from the query string",
-                "consumes": [
-                    "*/*"
-                ],
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "Example"
-                ],
-                "summary": "example get value from the query string",
-                "operationId": "getQueryParameters",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "1",
-                        "name": "id",
-                        "in": "query",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "2",
-                        "name": "name",
-                        "in": "query",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/models.Location_types"
                         }
                     }
                 }
@@ -312,130 +245,10 @@ var doc = `{
                     }
                 }
             }
-        },
-        "/postSave": {
-            "post": {
-                "description": "get value from the form",
-                "consumes": [
-                    "application/x-www-form-urlencoded"
-                ],
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "Example"
-                ],
-                "summary": "example get value from the form",
-                "operationId": "postSave",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "1",
-                        "name": "id",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "2",
-                        "name": "name",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/postSavefile": {
-            "post": {
-                "description": "get value/file from the form",
-                "consumes": [
-                    "multipart/form-data"
-                ],
-                "produces": [
-                    "text/plain"
-                ],
-                "tags": [
-                    "Example"
-                ],
-                "summary": "example get value/file from the form",
-                "operationId": "postSavefile",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "2",
-                        "name": "name",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "file",
-                        "description": "-",
-                        "name": "avatar",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "/users": {
-            "post": {
-                "description": "get value from the form/json",
-                "consumes": [
-                    "application/x-www-form-urlencoded"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Example"
-                ],
-                "summary": "example get value from the form/json",
-                "operationId": "users",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "1",
-                        "name": "id",
-                        "in": "formData",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "2",
-                        "name": "name",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "User"
-                        }
-                    }
-                }
-            }
         }
     },
     "definitions": {
-        "main.City": {
+        "models.City": {
             "type": "object",
             "properties": {
                 "City": {
@@ -443,18 +256,18 @@ var doc = `{
                 }
             }
         },
-        "main.Citys": {
+        "models.Citys": {
             "type": "object",
             "properties": {
                 "Citys": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/main.City"
+                        "$ref": "#/definitions/models.City"
                     }
                 }
             }
         },
-        "main.Country": {
+        "models.Country": {
             "type": "object",
             "properties": {
                 "country": {
@@ -462,29 +275,18 @@ var doc = `{
                 }
             }
         },
-        "main.Countrys": {
+        "models.Countrys": {
             "type": "object",
             "properties": {
                 "countrys": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/main.Country"
+                        "$ref": "#/definitions/models.Country"
                     }
                 }
             }
         },
-        "main.Emails_Data": {
-            "type": "object",
-            "properties": {
-                "email": {
-                    "type": "string"
-                },
-                "label": {
-                    "type": "string"
-                }
-            }
-        },
-        "main.Location": {
+        "models.Location": {
             "type": "object",
             "properties": {
                 "address": {
@@ -520,6 +322,9 @@ var doc = `{
                 "country": {
                     "type": "string"
                 },
+                "created_dttm": {
+                    "type": "string"
+                },
                 "destination_charger_logo": {
                     "type": "string"
                 },
@@ -530,10 +335,7 @@ var doc = `{
                     "type": "string"
                 },
                 "emails": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/main.Emails_Data"
-                    }
+                    "type": "string"
                 },
                 "geocode": {
                     "type": "string"
@@ -563,10 +365,7 @@ var doc = `{
                     "type": "string"
                 },
                 "location_type": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "longitude": {
                     "type": "string"
@@ -590,10 +389,7 @@ var doc = `{
                     "type": "string"
                 },
                 "sales_phone": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/main.Sales_Phone_Data"
-                    }
+                    "type": "string"
                 },
                 "sales_representative": {
                     "type": "string"
@@ -612,7 +408,7 @@ var doc = `{
                 }
             }
         },
-        "main.Location_type": {
+        "models.Location_type": {
             "type": "object",
             "properties": {
                 "Location_type": {
@@ -620,29 +416,29 @@ var doc = `{
                 }
             }
         },
-        "main.Location_types": {
+        "models.Location_types": {
             "type": "object",
             "properties": {
                 "Location_types": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/main.Location_type"
+                        "$ref": "#/definitions/models.Location_type"
                     }
                 }
             }
         },
-        "main.Locations": {
+        "models.Locations": {
             "type": "object",
             "properties": {
                 "locations": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/main.Location"
+                        "$ref": "#/definitions/models.Location"
                     }
                 }
             }
         },
-        "main.Region": {
+        "models.Region": {
             "type": "object",
             "properties": {
                 "region": {
@@ -650,28 +446,14 @@ var doc = `{
                 }
             }
         },
-        "main.Regions": {
+        "models.Regions": {
             "type": "object",
             "properties": {
                 "regions": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/main.Region"
+                        "$ref": "#/definitions/models.Region"
                     }
-                }
-            }
-        },
-        "main.Sales_Phone_Data": {
-            "type": "object",
-            "properties": {
-                "label": {
-                    "type": "string"
-                },
-                "line_below": {
-                    "type": "string"
-                },
-                "number": {
-                    "type": "string"
                 }
             }
         }

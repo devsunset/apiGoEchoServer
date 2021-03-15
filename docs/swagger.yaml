@@ -1,37 +1,30 @@
 basePath: /
 definitions:
-  main.City:
+  models.City:
     properties:
       City:
         type: string
     type: object
-  main.Citys:
+  models.Citys:
     properties:
       Citys:
         items:
-          $ref: '#/definitions/main.City'
+          $ref: '#/definitions/models.City'
         type: array
     type: object
-  main.Country:
+  models.Country:
     properties:
       country:
         type: string
     type: object
-  main.Countrys:
+  models.Countrys:
     properties:
       countrys:
         items:
-          $ref: '#/definitions/main.Country'
+          $ref: '#/definitions/models.Country'
         type: array
     type: object
-  main.Emails_Data:
-    properties:
-      email:
-        type: string
-      label:
-        type: string
-    type: object
-  main.Location:
+  models.Location:
     properties:
       address:
         type: string
@@ -55,6 +48,8 @@ definitions:
         type: string
       country:
         type: string
+      created_dttm:
+        type: string
       destination_charger_logo:
         type: string
       destination_website:
@@ -62,9 +57,7 @@ definitions:
       directions_link:
         type: string
       emails:
-        items:
-          $ref: '#/definitions/main.Emails_Data'
-        type: array
+        type: string
       geocode:
         type: string
       hours:
@@ -84,9 +77,7 @@ definitions:
       location_id:
         type: string
       location_type:
-        items:
-          type: string
-        type: array
+        type: string
       longitude:
         type: string
       nid:
@@ -102,9 +93,7 @@ definitions:
       region:
         type: string
       sales_phone:
-        items:
-          $ref: '#/definitions/main.Sales_Phone_Data'
-        type: array
+        type: string
       sales_representative:
         type: string
       sl_translate:
@@ -116,45 +105,36 @@ definitions:
       trt_id:
         type: string
     type: object
-  main.Location_type:
+  models.Location_type:
     properties:
       Location_type:
         type: string
     type: object
-  main.Location_types:
+  models.Location_types:
     properties:
       Location_types:
         items:
-          $ref: '#/definitions/main.Location_type'
+          $ref: '#/definitions/models.Location_type'
         type: array
     type: object
-  main.Locations:
+  models.Locations:
     properties:
       locations:
         items:
-          $ref: '#/definitions/main.Location'
+          $ref: '#/definitions/models.Location'
         type: array
     type: object
-  main.Region:
+  models.Region:
     properties:
       region:
         type: string
     type: object
-  main.Regions:
+  models.Regions:
     properties:
       regions:
         items:
-          $ref: '#/definitions/main.Region'
+          $ref: '#/definitions/models.Region'
         type: array
-    type: object
-  main.Sales_Phone_Data:
-    properties:
-      label:
-        type: string
-      line_below:
-        type: string
-      number:
-        type: string
     type: object
 host: 193.123.252.22:8282
 info:
@@ -197,13 +177,17 @@ paths:
         in: query
         name: nid
         type: string
+      - description: 여의도
+        in: query
+        name: title
+        type: string
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.Locations'
+            $ref: '#/definitions/models.Locations'
       summary: Tesla Chargers Location.
       tags:
       - API Tesla App
@@ -224,7 +208,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.Citys'
+            $ref: '#/definitions/models.Citys'
       summary: Tesla Chargers Location City.
       tags:
       - API Tesla App
@@ -245,7 +229,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.Countrys'
+            $ref: '#/definitions/models.Countrys'
       summary: Tesla Chargers Location Country.
       tags:
       - API Tesla App
@@ -261,7 +245,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.Regions'
+            $ref: '#/definitions/models.Regions'
       summary: Tesla Chargers Location Region.
       tags:
       - API Tesla App
@@ -286,59 +270,10 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/main.Location_types'
+            $ref: '#/definitions/models.Location_types'
       summary: Tesla Chargers Location Type.
       tags:
       - API Tesla App
-  /getPathParameters/{id}:
-    get:
-      consumes:
-      - '*/*'
-      description: get value from path
-      operationId: getPathParameters
-      parameters:
-      - description: "1"
-        in: path
-        name: id
-        required: true
-        type: string
-      produces:
-      - text/plain
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: string
-      summary: example get value from path
-      tags:
-      - Example
-  /getQueryParameters:
-    get:
-      consumes:
-      - '*/*'
-      description: get value from the query string
-      operationId: getQueryParameters
-      parameters:
-      - description: "1"
-        in: query
-        name: id
-        required: true
-        type: string
-      - description: "2"
-        in: query
-        name: name
-        required: true
-        type: string
-      produces:
-      - text/plain
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: string
-      summary: example get value from the query string
-      tags:
-      - Example
   /healthCheck:
     get:
       consumes:
@@ -356,85 +291,4 @@ paths:
       summary: Show the status of server.
       tags:
       - API Tesla App
-  /postSave:
-    post:
-      consumes:
-      - application/x-www-form-urlencoded
-      description: get value from the form
-      operationId: postSave
-      parameters:
-      - description: "1"
-        in: formData
-        name: id
-        required: true
-        type: string
-      - description: "2"
-        in: formData
-        name: name
-        required: true
-        type: string
-      produces:
-      - text/plain
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: string
-      summary: example get value from the form
-      tags:
-      - Example
-  /postSavefile:
-    post:
-      consumes:
-      - multipart/form-data
-      description: get value/file from the form
-      operationId: postSavefile
-      parameters:
-      - description: "2"
-        in: formData
-        name: name
-        required: true
-        type: string
-      - description: '-'
-        in: formData
-        name: avatar
-        required: true
-        type: file
-      produces:
-      - text/plain
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: string
-      summary: example get value/file from the form
-      tags:
-      - Example
-  /users:
-    post:
-      consumes:
-      - application/x-www-form-urlencoded
-      description: get value from the form/json
-      operationId: users
-      parameters:
-      - description: "1"
-        in: formData
-        name: id
-        required: true
-        type: string
-      - description: "2"
-        in: formData
-        name: name
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: User
-      summary: example get value from the form/json
-      tags:
-      - Example
 swagger: "2.0"
