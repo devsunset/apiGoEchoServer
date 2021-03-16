@@ -51,7 +51,6 @@ import (
 func main() {
 
 	e := echo.New()
-	//e.Debug = true
 
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
@@ -59,9 +58,9 @@ func main() {
 
 	e.Pre(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			fmt.Println("---------- start ----------")
+			fmt.Println("---------- start ----------", c.QueryParams())
 			err := next(c)
-			fmt.Println("---------- end ----------")
+			fmt.Println("---------- end ----------", err)
 			return err
 		}
 	})
@@ -70,14 +69,16 @@ func main() {
 	e.Use(middleware.RequestID())
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"*"},
-		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
-	}))
-	e.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
-		TokenLookup: "header:X-XSRF-TOKEN",
-	}))
-	e.Use(middleware.BodyLimit("5M"))
+	/*
+		e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+			AllowOrigins: []string{"*"},
+			AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
+		}))
+		e.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
+			TokenLookup: "header:X-XSRF-TOKEN",
+		}))
+		e.Use(middleware.BodyLimit("5M"))
+	*/
 
 	// Routing
 	e.GET("/healthCheck", HealthCheck)
