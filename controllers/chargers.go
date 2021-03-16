@@ -53,6 +53,46 @@ func GetLocationRegion(c echo.Context) error {
 	return c.JSON(http.StatusCreated, result)
 }
 
+func GetLocationRegionBackUp(c echo.Context) error {
+
+	db := db.DbManager()
+
+	sqlStatement := "SELECT DISTINCT REGION FROM TB_TESLA_LOCATION"
+
+	rows, err := db.Query(sqlStatement)
+	if err != nil {
+		fmt.Println(err)
+		//	return c.JSON(http.StatusCreated, u)
+	}
+
+	defer rows.Close()
+	defer db.Close()
+
+	result := []map[string]interface{}{}
+	cols, _ := rows.Columns()
+	for rows.Next() {
+		columns := make([]interface{}, len(cols))
+		columnPointers := make([]interface{}, len(cols))
+
+		for i, _ := range columns {
+			columnPointers[i] = &columns[i]
+		}
+		if err := rows.Scan(columnPointers...); err != nil {
+			return err
+		}
+		m := make(map[string]interface{})
+
+		for i, colName := range cols {
+			val := columnPointers[i].(*interface{})
+			m[colName] = *val
+		}
+		fmt.Println(m)
+		result = append(result, m)
+
+	}
+	return c.JSON(http.StatusCreated, result)
+}
+
 // getLocationCountry godoc
 // @Summary Tesla Chargers Location Country.
 // @Description get tesla Chargers Location Country.
