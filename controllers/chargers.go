@@ -4,8 +4,9 @@ import (
 	"apiServer/db"
 	"apiServer/models"
 	"fmt"
-	"github.com/labstack/echo/v4"
 	"net/http"
+
+	"github.com/labstack/echo/v4"
 
 	_ "github.com/lib/pq"
 )
@@ -40,7 +41,7 @@ func GetLocationRegion(c echo.Context) error {
 	defer rows.Close()
 	defer db.Close()
 
-	result := models.Regions{}
+	result := models.Regions{Result_Code: "S", Result_Message: "Success"}
 
 	for rows.Next() {
 		region := models.Region{}
@@ -124,7 +125,7 @@ func GetLocationCountry(c echo.Context) error {
 	defer rows.Close()
 	defer db.Close()
 
-	result := models.Countrys{}
+	result := models.Countrys{Result_Code: "S", Result_Message: "Success"}
 
 	for rows.Next() {
 		country := models.Country{}
@@ -168,7 +169,7 @@ func GetLocationCity(c echo.Context) error {
 	defer rows.Close()
 	defer db.Close()
 
-	result := models.Citys{}
+	result := models.Citys{Result_Code: "S", Result_Message: "Success"}
 
 	for rows.Next() {
 		City := models.City{}
@@ -221,7 +222,7 @@ func GetLocationType(c echo.Context) error {
 	defer rows.Close()
 	defer db.Close()
 
-	result := models.Location_types{}
+	result := models.Location_types{Result_Code: "S", Result_Message: "Success"}
 
 	for rows.Next() {
 		Location_type := models.Location_type{}
@@ -303,7 +304,7 @@ func GetLocation(c echo.Context) error {
 	defer rows.Close()
 	defer db.Close()
 
-	result := models.Locations{}
+	result := models.Locations{Result_Code: "S", Result_Message: "Success"}
 
 	for rows.Next() {
 		location := models.Location{}

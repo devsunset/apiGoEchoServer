@@ -5,7 +5,9 @@ type Region struct {
 }
 
 type Regions struct {
-	Regions []Region `json:"regions"`
+	Result_Code    string   `json:"RESULT_CODE"`
+	Result_Message string   `json:"RESULT_MESSAGE"`
+	Regions        []Region `json:"DATA"`
 }
 
 type Country struct {
@@ -13,7 +15,9 @@ type Country struct {
 }
 
 type Countrys struct {
-	Countrys []Country `json:"countrys"`
+	Result_Code    string    `json:"RESULT_CODE"`
+	Result_Message string    `json:"RESULT_MESSAGE"`
+	Countrys       []Country `json:"DATA"`
 }
 
 type City struct {
@@ -21,7 +25,9 @@ type City struct {
 }
 
 type Citys struct {
-	Citys []City `json:"Citys"`
+	Result_Code    string `json:"RESULT_CODE"`
+	Result_Message string `json:"RESULT_MESSAGE"`
+	Citys          []City `json:"DATA"`
 }
 
 type Location_type struct {
@@ -29,7 +35,9 @@ type Location_type struct {
 }
 
 type Location_types struct {
-	Location_types []Location_type `json:"Location_types"`
+	Result_Code    string          `json:"RESULT_CODE"`
+	Result_Message string          `json:"RESULT_MESSAGE"`
+	Location_types []Location_type `json:"DATA"`
 }
 
 type Location struct {
@@ -75,5 +83,7 @@ type Location struct {
 }
 
 type Locations struct {
-	Locations []Location `json:"locations"`
+	Result_Code    string     `json:"RESULT_CODE"`
+	Result_Message string     `json:"RESULT_MESSAGE"`
+	Locations      []Location `json:"DATA"`
 }
