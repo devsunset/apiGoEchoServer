@@ -7,10 +7,14 @@ definitions:
     type: object
   models.Citys:
     properties:
-      Citys:
+      DATA:
         items:
           $ref: '#/definitions/models.City'
         type: array
+      RESULT_CODE:
+        type: string
+      RESULT_MESSAGE:
+        type: string
     type: object
   models.Country:
     properties:
@@ -19,10 +23,14 @@ definitions:
     type: object
   models.Countrys:
     properties:
-      countrys:
+      DATA:
         items:
           $ref: '#/definitions/models.Country'
         type: array
+      RESULT_CODE:
+        type: string
+      RESULT_MESSAGE:
+        type: string
     type: object
   models.Location:
     properties:
@@ -112,17 +120,25 @@ definitions:
     type: object
   models.Location_types:
     properties:
-      Location_types:
+      DATA:
         items:
           $ref: '#/definitions/models.Location_type'
         type: array
+      RESULT_CODE:
+        type: string
+      RESULT_MESSAGE:
+        type: string
     type: object
   models.Locations:
     properties:
-      locations:
+      DATA:
         items:
           $ref: '#/definitions/models.Location'
         type: array
+      RESULT_CODE:
+        type: string
+      RESULT_MESSAGE:
+        type: string
     type: object
   models.Region:
     properties:
@@ -131,12 +147,16 @@ definitions:
     type: object
   models.Regions:
     properties:
-      regions:
+      DATA:
         items:
           $ref: '#/definitions/models.Region'
         type: array
+      RESULT_CODE:
+        type: string
+      RESULT_MESSAGE:
+        type: string
     type: object
-host: 193.123.248.85:80
+host: 132.145.85.185
 info:
   contact:
     email: devsunset@gmail.com

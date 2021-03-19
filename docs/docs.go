@@ -259,11 +259,17 @@ var doc = `{
         "models.Citys": {
             "type": "object",
             "properties": {
-                "Citys": {
+                "DATA": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.City"
                     }
+                },
+                "RESULT_CODE": {
+                    "type": "string"
+                },
+                "RESULT_MESSAGE": {
+                    "type": "string"
                 }
             }
         },
@@ -278,11 +284,17 @@ var doc = `{
         "models.Countrys": {
             "type": "object",
             "properties": {
-                "countrys": {
+                "DATA": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Country"
                     }
+                },
+                "RESULT_CODE": {
+                    "type": "string"
+                },
+                "RESULT_MESSAGE": {
+                    "type": "string"
                 }
             }
         },
@@ -419,22 +431,34 @@ var doc = `{
         "models.Location_types": {
             "type": "object",
             "properties": {
-                "Location_types": {
+                "DATA": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Location_type"
                     }
+                },
+                "RESULT_CODE": {
+                    "type": "string"
+                },
+                "RESULT_MESSAGE": {
+                    "type": "string"
                 }
             }
         },
         "models.Locations": {
             "type": "object",
             "properties": {
-                "locations": {
+                "DATA": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Location"
                     }
+                },
+                "RESULT_CODE": {
+                    "type": "string"
+                },
+                "RESULT_MESSAGE": {
+                    "type": "string"
                 }
             }
         },
@@ -449,11 +473,17 @@ var doc = `{
         "models.Regions": {
             "type": "object",
             "properties": {
-                "regions": {
+                "DATA": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Region"
                     }
+                },
+                "RESULT_CODE": {
+                    "type": "string"
+                },
+                "RESULT_MESSAGE": {
+                    "type": "string"
                 }
             }
         }
@@ -472,7 +502,7 @@ type swaggerInfo struct {
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = swaggerInfo{
 	Version:     "1.0",
-	Host:        "193.123.248.85:80",
+	Host:        "132.145.85.185",
 	BasePath:    "/",
 	Schemes:     []string{},
 	Title:       "apiServer  API",
