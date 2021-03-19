@@ -32,7 +32,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/swaggo/echo-swagger"
+	echoSwagger "github.com/swaggo/echo-swagger"
 )
 
 // @title apiServer  API
@@ -46,7 +46,7 @@ import (
 // @license.name Apache 2.0
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 
-// @host 193.123.248.85:80
+// @host 132.145.85.185
 // @BasePath /
 func main() {
 
@@ -58,9 +58,9 @@ func main() {
 
 	e.Pre(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			fmt.Println("---------- start ----------", c.QueryParams())
+			fmt.Println("---------- request  - start ----------", c.QueryParams())
 			err := next(c)
-			fmt.Println("---------- end ----------", err)
+			fmt.Println("---------- response - end ----------", err)
 			return err
 		}
 	})
