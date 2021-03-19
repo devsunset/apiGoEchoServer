@@ -1,7 +1,7 @@
 package models
 
 type Region struct {
-	Region string `json:"region"`
+	Region string `json:"REGION"`
 }
 
 type Regions struct {
@@ -11,7 +11,7 @@ type Regions struct {
 }
 
 type Country struct {
-	Country string `json:"country"`
+	Country string `json:"COUNTRY"`
 }
 
 type Countrys struct {
@@ -21,7 +21,7 @@ type Countrys struct {
 }
 
 type City struct {
-	City string `json:"City"`
+	City string `json:"CITY"`
 }
 
 type Citys struct {
@@ -31,7 +31,7 @@ type Citys struct {
 }
 
 type Location_type struct {
-	Location_type string `json:"Location_type"`
+	Location_type string `json:"LOCATION_TYPE"`
 }
 
 type Location_types struct {
@@ -41,45 +41,45 @@ type Location_types struct {
 }
 
 type Location struct {
-	Sl_translate             string `json:"sl_translate"`
-	Address_line_1           string `json:"address_line_1"`
-	Address_line_2           string `json:"address_line_2"`
-	Address_notes            string `json:"address_notes"`
-	Address                  string `json:"address"`
-	Amenities                string `json:"amenities"`
-	Baidu_lat                string `json:"baidu_lat"`
-	Baidu_lng                string `json:"baidu_lng"`
-	Chargers                 string `json:"chargers"`
-	City                     string `json:"city"`
-	Common_name              string `json:"common_name"`
-	Country                  string `json:"country"`
-	Destination_charger_logo string `json:"destination_charger_logo"`
-	Destination_website      string `json:"destination_website"`
-	Directions_link          string `json:"directions_link"`
-	Emails                   string `json:"emails"`
-	Geocode                  string `json:"geocode"`
-	Hours                    string `json:"hours"`
-	Is_gallery               string `json:"is_gallery"`
-	Kiosk_pin_x              string `json:"kiosk_pin_x"`
-	Kiosk_pin_y              string `json:"kiosk_pin_y"`
-	Kiosk_zoom_pin_x         string `json:"kiosk_zoom_pin_x"`
-	Kiosk_zoom_pin_y         string `json:"kiosk_zoom_pin_y"`
-	Latitude                 string `json:"latitude"`
-	Location_id              string `json:"location_id"`
-	Location_type            string `json:"location_type"`
-	Longitude                string `json:"longitude"`
-	Nid                      string `json:"nid"`
-	Open_soon                string `json:"open_soon"`
-	Path                     string `json:"path"`
-	Postal_code              string `json:"postal_code"`
-	Province_state           string `json:"province_state"`
-	Region                   string `json:"region"`
-	Sales_phone              string `json:"sales_phone"`
-	Sales_representative     string `json:"sales_representative"`
-	Sub_region               string `json:"sub_region"`
-	Title                    string `json:"title"`
-	Trt_id                   string `json:"trt_id"`
-	Created_dttm             string `json:"created_dttm"`
+	Sl_translate             string `json:"SL_TRANSLATE"`
+	Address_line_1           string `json:"ADDRESS_LINE_1"`
+	Address_line_2           string `json:"ADDRESS_LINE_2"`
+	Address_notes            string `json:"ADDRESS_NOTES"`
+	Address                  string `json:"ADDRESS"`
+	Amenities                string `json:"AMENITIES"`
+	Baidu_lat                string `json:"BAIDU_LAT"`
+	Baidu_lng                string `json:"BAIDU_LNG"`
+	Chargers                 string `json:"CHARGERS"`
+	City                     string `json:"CITY"`
+	Common_name              string `json:"COMMON_NAME"`
+	Country                  string `json:"COUNTRY"`
+	Destination_charger_logo string `json:"DESTINATION_CHARGER_LOGO"`
+	Destination_website      string `json:"DESTINATION_WEBSITE"`
+	Directions_link          string `json:"DIRECTIONS_LINK"`
+	Emails                   string `json:"EMAILS"`
+	Geocode                  string `json:"GEOCODE"`
+	Hours                    string `json:"HOURS"`
+	Is_gallery               string `json:"IS_GALLERY"`
+	Kiosk_pin_x              string `json:"KIOSK_PIN_X"`
+	Kiosk_pin_y              string `json:"KIOSK_PIN_Y"`
+	Kiosk_zoom_pin_x         string `json:"KIOSK_ZOOM_PIN_X"`
+	Kiosk_zoom_pin_y         string `json:"KIOSK_ZOOM_PIN_Y"`
+	Latitude                 string `json:"LATITUDE"`
+	Location_id              string `json:"LOCATION_ID"`
+	Location_type            string `json:"LOCATION_TYPE"`
+	Longitude                string `json:"LONGITUDE"`
+	Nid                      string `json:"NID"`
+	Open_soon                string `json:"OPEN_SOON"`
+	Path                     string `json:"PATH"`
+	Postal_code              string `json:"POSTAL_CODE"`
+	Province_state           string `json:"PROVINCE_STATE"`
+	Region                   string `json:"REGION"`
+	Sales_phone              string `json:"SALES_PHONE"`
+	Sales_representative     string `json:"SALES_REPRESENTATIVE"`
+	Sub_region               string `json:"SUB_REGION"`
+	Title                    string `json:"TITLE"`
+	Trt_id                   string `json:"TRT_ID"`
+	Created_dttm             string `json:"CREATED_DTTM"`
 }
 
 type Locations struct {

@@ -21,3 +21,7 @@ config/config.json
 # logs
 logs/app.log
 logs/batch.log
+
+
+#Mac
+.DS_Store

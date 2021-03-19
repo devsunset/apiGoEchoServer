@@ -101,14 +101,14 @@ func GetLocationRegionBackUp(c echo.Context) error {
 // @ID getLocationCountry
 // @Accept */*
 // @Produce json
-// @Param region query string false "asia_pacific"
+// @Param REGION query string false "asia_pacific"
 // @Success 200 {object} models.Countrys
 // @Router /getLocationCountry [get]
 func GetLocationCountry(c echo.Context) error {
 
 	db := db.DbManager()
 
-	region := c.QueryParam("region")
+	region := c.QueryParam("REGION")
 
 	sqlStatement := "SELECT DISTINCT COUNTRY FROM TB_TESLA_LOCATION WHERE 1=1 "
 
@@ -145,14 +145,14 @@ func GetLocationCountry(c echo.Context) error {
 // @ID getLocationCity
 // @Accept */*
 // @Produce json
-// @Param country query string false "South Korea"
+// @Param COUNTRY query string false "South Korea"
 // @Success 200 {object} models.Citys
 // @Router /getLocationCity [get]
 func GetLocationCity(c echo.Context) error {
 
 	db := db.DbManager()
 
-	country := c.QueryParam("country")
+	country := c.QueryParam("COUNTRY")
 
 	sqlStatement := "SELECT DISTINCT CITY FROM TB_TESLA_LOCATION WHERE 1=1 "
 
@@ -189,17 +189,17 @@ func GetLocationCity(c echo.Context) error {
 // @ID getLocationType
 // @Accept */*
 // @Produce json
-// @Param country query string false "South Korea"
-// @Param city query string false "서울특별시"
+// @Param COUNTRY query string false "South Korea"
+// @Param CITY query string false "서울특별시"
 // @Success 200 {object} models.Location_types
 // @Router /getLocationType [get]
 func GetLocationType(c echo.Context) error {
 
 	db := db.DbManager()
 
-	country := c.QueryParam("country")
+	country := c.QueryParam("COUNTRY")
 
-	city := c.QueryParam("city")
+	city := c.QueryParam("CITY")
 
 	sqlStatement := "SELECT DISTINCT (unnest(string_to_array(LOCATION_TYPE, '|'))) AS LOCATION_TYPE FROM TB_TESLA_LOCATION where  1=1 "
 
@@ -242,12 +242,12 @@ func GetLocationType(c echo.Context) error {
 // @ID getLocation
 // @Accept */*
 // @Produce json
-// @Param region query string false "asia_pacific"
-// @Param country query string true "South Korea"
-// @Param city query string false "서울특별시"
-// @Param location_type query string false "supercharger"
-// @Param nid query string false "28865"
-// @Param title query string false "여의도"
+// @Param REGION query string false "asia_pacific"
+// @Param COUNTRY query string true "South Korea"
+// @Param CITY query string false "서울특별시"
+// @Param LOCATION_TYPE query string false "supercharger"
+// @Param NID query string false "28865"
+// @Param TITLE query string false "여의도"
 // @Success 200 {object} models.Locations
 // @Router /getLocation [get]
 func GetLocation(c echo.Context) error {
@@ -260,17 +260,17 @@ func GetLocation(c echo.Context) error {
 			, kiosk_pin_x, kiosk_pin_y, kiosk_zoom_pin_x, kiosk_zoom_pin_y, latitude, location_id, location_type, longitude, nid, open_soon
 			, path, postal_code, province_state, region, sales_phone, sales_representative, sub_region, title, trt_id, created_dttm FROM tb_tesla_location WHERE 1=1 `
 
-	region := c.QueryParam("region")
+	region := c.QueryParam("REGION")
 
-	country := c.QueryParam("country")
+	country := c.QueryParam("COUNTRY")
 
-	city := c.QueryParam("city")
+	city := c.QueryParam("CITY")
 
-	location_type := c.QueryParam("location_type")
+	location_type := c.QueryParam("LOCATION_TYPE")
 
-	nid := c.QueryParam("nid")
+	nid := c.QueryParam("NID")
 
-	title := c.QueryParam("title")
+	title := c.QueryParam("TITLE")
 
 	if len(region) > 0 {
 		sqlStatement += " AND REGION =  '" + region + "'"
