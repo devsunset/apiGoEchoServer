@@ -32,7 +32,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	echoSwagger "github.com/swaggo/echo-swagger"
+	"github.com/swaggo/echo-swagger"
 )
 
 // @title apiServer  API
@@ -69,20 +69,16 @@ func main() {
 	e.Use(middleware.RequestID())
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-	/*
-		e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-			AllowOrigins: []string{"*"},
-			AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
-		}))
-		e.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
-			TokenLookup: "header:X-XSRF-TOKEN",
-		}))
-		e.Use(middleware.BodyLimit("5M"))
-	*/
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
+	}))
+	e.Use(middleware.CSRFWithConfig(middleware.CSRFConfig{
+		TokenLookup: "header:X-XSRF-TOKEN",
+	}))
 
 	// Routing
 	e.GET("/healthCheck", HealthCheck)
-
 	e.GET("getLocationRegion", controllers.GetLocationRegion)
 	e.GET("getLocationCountry", controllers.GetLocationCountry)
 	e.GET("getLocationCity", controllers.GetLocationCity)

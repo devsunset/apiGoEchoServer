@@ -50,38 +50,38 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "asia_pacific",
-                        "name": "region",
+                        "name": "Region",
                         "in": "query"
                     },
                     {
                         "type": "string",
                         "description": "South Korea",
-                        "name": "country",
+                        "name": "Country",
                         "in": "query",
                         "required": true
                     },
                     {
                         "type": "string",
                         "description": "서울특별시",
-                        "name": "city",
+                        "name": "City",
                         "in": "query"
                     },
                     {
                         "type": "string",
                         "description": "supercharger",
-                        "name": "location_type",
+                        "name": "Location_type",
                         "in": "query"
                     },
                     {
                         "type": "string",
                         "description": "28865",
-                        "name": "nid",
+                        "name": "Nid",
                         "in": "query"
                     },
                     {
                         "type": "string",
                         "description": "여의도",
-                        "name": "title",
+                        "name": "Title",
                         "in": "query"
                     }
                 ],
@@ -113,7 +113,7 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "South Korea",
-                        "name": "country",
+                        "name": "Country",
                         "in": "query"
                     }
                 ],
@@ -145,7 +145,7 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "asia_pacific",
-                        "name": "region",
+                        "name": "Region",
                         "in": "query"
                     }
                 ],
@@ -201,13 +201,13 @@ var doc = `{
                     {
                         "type": "string",
                         "description": "South Korea",
-                        "name": "country",
+                        "name": "Country",
                         "in": "query"
                     },
                     {
                         "type": "string",
                         "description": "서울특별시",
-                        "name": "city",
+                        "name": "City",
                         "in": "query"
                     }
                 ],
@@ -276,7 +276,7 @@ var doc = `{
         "models.Country": {
             "type": "object",
             "properties": {
-                "country": {
+                "Country": {
                     "type": "string"
                 }
             }
@@ -301,121 +301,121 @@ var doc = `{
         "models.Location": {
             "type": "object",
             "properties": {
-                "address": {
+                "Address": {
                     "type": "string"
                 },
-                "address_line_1": {
+                "Address_line_1": {
                     "type": "string"
                 },
-                "address_line_2": {
+                "Address_line_2": {
                     "type": "string"
                 },
-                "address_notes": {
+                "Address_notes": {
                     "type": "string"
                 },
-                "amenities": {
+                "Amenities": {
                     "type": "string"
                 },
-                "baidu_lat": {
+                "Baidu_lat": {
                     "type": "string"
                 },
-                "baidu_lng": {
+                "Baidu_lng": {
                     "type": "string"
                 },
-                "chargers": {
+                "Chargers": {
                     "type": "string"
                 },
-                "city": {
+                "City": {
                     "type": "string"
                 },
-                "common_name": {
+                "Common_name": {
                     "type": "string"
                 },
-                "country": {
+                "Country": {
                     "type": "string"
                 },
-                "created_dttm": {
+                "Created_dttm": {
                     "type": "string"
                 },
-                "destination_charger_logo": {
+                "Destination_charger_logo": {
                     "type": "string"
                 },
-                "destination_website": {
+                "Destination_website": {
                     "type": "string"
                 },
-                "directions_link": {
+                "Directions_link": {
                     "type": "string"
                 },
-                "emails": {
+                "Emails": {
                     "type": "string"
                 },
-                "geocode": {
+                "Geocode": {
                     "type": "string"
                 },
-                "hours": {
+                "Hours": {
                     "type": "string"
                 },
-                "is_gallery": {
+                "Is_gallery": {
                     "type": "string"
                 },
-                "kiosk_pin_x": {
+                "Kiosk_pin_x": {
                     "type": "string"
                 },
-                "kiosk_pin_y": {
+                "Kiosk_pin_y": {
                     "type": "string"
                 },
-                "kiosk_zoom_pin_x": {
+                "Kiosk_zoom_pin_x": {
                     "type": "string"
                 },
-                "kiosk_zoom_pin_y": {
+                "Kiosk_zoom_pin_y": {
                     "type": "string"
                 },
-                "latitude": {
+                "Latitude": {
                     "type": "string"
                 },
-                "location_id": {
+                "Location_id": {
                     "type": "string"
                 },
-                "location_type": {
+                "Location_type": {
                     "type": "string"
                 },
-                "longitude": {
+                "Longitude": {
                     "type": "string"
                 },
-                "nid": {
+                "Nid": {
                     "type": "string"
                 },
-                "open_soon": {
+                "Open_soon": {
                     "type": "string"
                 },
-                "path": {
+                "Path": {
                     "type": "string"
                 },
-                "postal_code": {
+                "Postal_code": {
                     "type": "string"
                 },
-                "province_state": {
+                "Province_state": {
                     "type": "string"
                 },
-                "region": {
+                "Region": {
                     "type": "string"
                 },
-                "sales_phone": {
+                "Sales_phone": {
                     "type": "string"
                 },
-                "sales_representative": {
+                "Sales_representative": {
                     "type": "string"
                 },
-                "sl_translate": {
+                "Sl_translate": {
                     "type": "string"
                 },
-                "sub_region": {
+                "Sub_region": {
                     "type": "string"
                 },
-                "title": {
+                "Title": {
                     "type": "string"
                 },
-                "trt_id": {
+                "Trt_id": {
                     "type": "string"
                 }
             }
@@ -465,7 +465,7 @@ var doc = `{
         "models.Region": {
             "type": "object",
             "properties": {
-                "region": {
+                "Region": {
                     "type": "string"
                 }
             }

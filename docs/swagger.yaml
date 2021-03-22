@@ -18,7 +18,7 @@ definitions:
     type: object
   models.Country:
     properties:
-      country:
+      Country:
         type: string
     type: object
   models.Countrys:
@@ -34,83 +34,83 @@ definitions:
     type: object
   models.Location:
     properties:
-      address:
+      Address:
         type: string
-      address_line_1:
+      Address_line_1:
         type: string
-      address_line_2:
+      Address_line_2:
         type: string
-      address_notes:
+      Address_notes:
         type: string
-      amenities:
+      Amenities:
         type: string
-      baidu_lat:
+      Baidu_lat:
         type: string
-      baidu_lng:
+      Baidu_lng:
         type: string
-      chargers:
+      Chargers:
         type: string
-      city:
+      City:
         type: string
-      common_name:
+      Common_name:
         type: string
-      country:
+      Country:
         type: string
-      created_dttm:
+      Created_dttm:
         type: string
-      destination_charger_logo:
+      Destination_charger_logo:
         type: string
-      destination_website:
+      Destination_website:
         type: string
-      directions_link:
+      Directions_link:
         type: string
-      emails:
+      Emails:
         type: string
-      geocode:
+      Geocode:
         type: string
-      hours:
+      Hours:
         type: string
-      is_gallery:
+      Is_gallery:
         type: string
-      kiosk_pin_x:
+      Kiosk_pin_x:
         type: string
-      kiosk_pin_y:
+      Kiosk_pin_y:
         type: string
-      kiosk_zoom_pin_x:
+      Kiosk_zoom_pin_x:
         type: string
-      kiosk_zoom_pin_y:
+      Kiosk_zoom_pin_y:
         type: string
-      latitude:
+      Latitude:
         type: string
-      location_id:
+      Location_id:
         type: string
-      location_type:
+      Location_type:
         type: string
-      longitude:
+      Longitude:
         type: string
-      nid:
+      Nid:
         type: string
-      open_soon:
+      Open_soon:
         type: string
-      path:
+      Path:
         type: string
-      postal_code:
+      Postal_code:
         type: string
-      province_state:
+      Province_state:
         type: string
-      region:
+      Region:
         type: string
-      sales_phone:
+      Sales_phone:
         type: string
-      sales_representative:
+      Sales_representative:
         type: string
-      sl_translate:
+      Sl_translate:
         type: string
-      sub_region:
+      Sub_region:
         type: string
-      title:
+      Title:
         type: string
-      trt_id:
+      Trt_id:
         type: string
     type: object
   models.Location_type:
@@ -142,7 +142,7 @@ definitions:
     type: object
   models.Region:
     properties:
-      region:
+      Region:
         type: string
     type: object
   models.Regions:
@@ -178,28 +178,28 @@ paths:
       parameters:
       - description: asia_pacific
         in: query
-        name: region
+        name: Region
         type: string
       - description: South Korea
         in: query
-        name: country
+        name: Country
         required: true
         type: string
       - description: 서울특별시
         in: query
-        name: city
+        name: City
         type: string
       - description: supercharger
         in: query
-        name: location_type
+        name: Location_type
         type: string
       - description: "28865"
         in: query
-        name: nid
+        name: Nid
         type: string
       - description: 여의도
         in: query
-        name: title
+        name: Title
         type: string
       produces:
       - application/json
@@ -220,7 +220,7 @@ paths:
       parameters:
       - description: South Korea
         in: query
-        name: country
+        name: Country
         type: string
       produces:
       - application/json
@@ -241,7 +241,7 @@ paths:
       parameters:
       - description: asia_pacific
         in: query
-        name: region
+        name: Region
         type: string
       produces:
       - application/json
@@ -278,11 +278,11 @@ paths:
       parameters:
       - description: South Korea
         in: query
-        name: country
+        name: Country
         type: string
       - description: 서울특별시
         in: query
-        name: city
+        name: City
         type: string
       produces:
       - application/json
