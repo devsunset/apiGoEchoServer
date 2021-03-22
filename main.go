@@ -32,7 +32,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/swaggo/echo-swagger"
+	echoSwagger "github.com/swaggo/echo-swagger"
 )
 
 // @title apiServer  API
@@ -86,11 +86,12 @@ func main() {
 	e.GET("getLocation", controllers.GetLocation)
 
 	/*
-		e.GET("/getPathParameters/:id", controllers.GetPathParameters)
-		e.GET("/getQueryParameters", controllers.GetQueryParameters)
-		e.POST("postSave", controllers.PostSave)
-		e.POST("postSavefile", controllers.PostSavefile)
-		e.POST("users", controllers.Users)
+		    // example
+			e.GET("/getPathParameters/:id", controllers.GetPathParameters)
+			e.GET("/getQueryParameters", controllers.GetQueryParameters)
+			e.POST("postSave", controllers.PostSave)
+			e.POST("postSavefile", controllers.PostSavefile)
+			e.POST("users", controllers.Users)
 	*/
 
 	// Static Content
