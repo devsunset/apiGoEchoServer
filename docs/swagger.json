@@ -14,7 +14,7 @@
         },
         "version": "1.0"
     },
-    "host": "132.145.85.185",
+    "host": "193.123.252.22",
     "basePath": "/",
     "paths": {
         "/getLocation": {

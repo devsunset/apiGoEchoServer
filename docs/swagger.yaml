@@ -156,7 +156,7 @@ definitions:
       RESULT_MESSAGE:
         type: string
     type: object
-host: 132.145.85.185
+host: 193.123.252.22
 info:
   contact:
     email: devsunset@gmail.com

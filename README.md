@@ -1,2 +1,2 @@
 # apiServer
-apiServer (Tesla Chargers App - Rest Api Server)
+apiServer (Tesla Chargers App - Api Server)
