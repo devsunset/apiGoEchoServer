@@ -16,7 +16,7 @@
 
 
 # config.json file exclude (security)
-config/config.json
+# config/config.json
 
 # logs
 logs/app.log
