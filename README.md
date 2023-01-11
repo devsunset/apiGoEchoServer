@@ -19,4 +19,4 @@ apiServer (Tesla Chargers App - Api Server)
   CREATE DATABASE teslapsql OWNER teslapsql;
   \l
   
-2. config/config.json 
+2. config/config.json (
