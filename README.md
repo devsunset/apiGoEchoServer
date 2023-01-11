@@ -19,4 +19,6 @@ apiServer (Tesla Chargers App - Api Server)
   CREATE DATABASE teslapsql OWNER teslapsql;
   \l
   
-2. config/config.json (
+2. tb_tesla_location.sql 스크립트 사용하여 테이블 생성 
+
+3. config/config.json 
