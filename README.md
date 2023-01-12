@@ -27,7 +27,7 @@ apiServer (Tesla Chargers App - Api Server)
 
 5. ./execute_batch.sh
 
-6. ./startup.sh
+6. go build
 
-7. 
+7. ./startup.sh
 
