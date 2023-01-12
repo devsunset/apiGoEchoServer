@@ -21,6 +21,6 @@ apiServer (Tesla Chargers App - Api Server)
   
 2. tb_tesla_location.sql 스크립트 사용하여 테이블 생성 
 
-3. config/config.json DB 정보 수정 
+3. config/config.json 설정 정보 환경에 맞게 수정 
 
 
