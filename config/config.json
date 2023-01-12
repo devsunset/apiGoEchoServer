@@ -1,7 +1,7 @@
 {
     "TESLA_REST_API_URL" : "https://tesla.com/all-locations",
     "DB_USERNAME": "teslapsql",
-    "DB_PASSWORD": "ahqkdlf12#",
+    "DB_PASSWORD": "PASSWORD",
     "DB_PORT": 5432,
     "DB_HOST": "193.123.252.22",
     "DB_NAME": "teslapsql",
