@@ -100,7 +100,7 @@ func main() {
 	// Swagger
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
-	e.Logger.Fatal(e.Start(":8282"))
+	e.Logger.Fatal(e.Start(":8383"))
 }
 
 // HealthCheck godoc
