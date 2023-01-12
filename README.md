@@ -31,3 +31,8 @@ apiServer (Tesla Chargers App - Api Server)
 
 7. ./startup.sh
 
+8. http://ip:8383/swagger/index.html
+   ex) http://193.123.252.22:8383/swagger/index.html
+
+
+
