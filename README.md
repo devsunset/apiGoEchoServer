@@ -27,11 +27,12 @@ apiServer (Tesla Chargers App - Api Server)
 
 5. ./execute_batch.sh
 
-6. go build
+6. go build main.go
 
 7. ./startup.sh
 
 8. http://ip:8383/swagger/index.html
+
    ex) http://193.123.252.22:8383/swagger/index.html
 
 
