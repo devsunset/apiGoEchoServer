@@ -23,4 +23,11 @@ apiServer (Tesla Chargers App - Api Server)
 
 3. config/config.json 설정 정보 환경에 맞게 수정 
 
+4. ./swagger_generater.sh
+
+5. ./execute_batch.sh
+
+6. ./startup.sh
+
+7. 
 
