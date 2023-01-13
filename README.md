@@ -1,5 +1,6 @@
-# apiServer
-apiServer (Tesla Chargers App - Api Server)
+# apiGoEchoServer
+
+apiGoEchoServer (Tesla Chargers App - Api Server)
 
 
 1. postgres install
