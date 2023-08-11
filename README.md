@@ -19,7 +19,7 @@ apiGoEchoServer (Tesla Chargers App - Api Server)
 
   CREATE DATABASE teslapsql OWNER teslapsql;
   \l
-  
+
 2. tb_tesla_location.sql 스크립트 사용하여 테이블 생성 
 
 3. config/config.json 설정 정보 환경에 맞게 수정 
@@ -27,6 +27,7 @@ apiGoEchoServer (Tesla Chargers App - Api Server)
 4. ./swagger_generater.sh
 
 5. ./execute_batch.sh
+   cf) tesla api가 값을 제대로 리턴 하지 않는 경우가 많음 여러번 시도 필요 
 
 6. go build main.go
 
