@@ -3,7 +3,7 @@
     "DB_USERNAME": "teslapsql",
     "DB_PASSWORD": "PASSWORD",
     "DB_PORT": 5432,
-    "DB_HOST": "193.123.252.22",
+    "DB_HOST": "localhost",
     "DB_NAME": "teslapsql",
     "DB_MAXIDLECONNS": 100,
     "DB_MAXOPENCONNS": 900
