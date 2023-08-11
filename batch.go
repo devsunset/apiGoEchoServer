@@ -177,5 +177,7 @@ func main() {
 		}
 
 		log.Println("5. ---------- : batch process end")
+	}else{
+	 log.Println("No Data")
 	}
 }
