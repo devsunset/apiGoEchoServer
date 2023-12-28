@@ -35,7 +35,6 @@ apiGoEchoServer (Tesla Chargers App - Api Server)
 
 8. http://ip:8383/swagger/index.html
 
-   ex) http://144.24.71.73:8383/swagger/index.html
 
 
 
