@@ -15,10 +15,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"net/http"
+	// "crypto/tls"
+	// "net/http"
 	"os"
 	"strings"
-
+	
 	_ "github.com/lib/pq"
 
 	"apiServer/config"
@@ -99,18 +100,57 @@ func main() {
 	configuration := config.GetConfig()
 
 	log.Info("0. ---------- : batch process start")
-	resp, err := http.Get(configuration.TESLA_REST_API_URL)
-	if err != nil {
-		log.Fatal(err)
-		panic(err)
-	}
+	//------------------------------------------------------------
+	// https request
+	//------------------------------------------------------------
+	// resp, err := http.Get(configuration.TESLA_REST_API_URL)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	panic(err)
+	// }
 
-	defer resp.Body.Close()
+	// defer resp.Body.Close()
 
-	data, err := ioutil.ReadAll(resp.Body)
+	// data, err := ioutil.ReadAll(resp.Body)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	panic(err)
+	// }
+
+	//------------------------------------------------------------
+	// https request - TLS 설정에서 인증서 검증 무시
+	//------------------------------------------------------------
+	// tr := &http.Transport{
+	// 	TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	// }
+
+	// // 사용자 정의 Transport를 사용하여 HTTP 클라이언트 생성
+	// client := &http.Client{Transport: tr}
+
+	// // HTTPS URL에 GET 요청 보내기
+	// resp, err := client.Get(configuration.TESLA_REST_API_URL)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	return
+	// }
+	// defer resp.Body.Close()
+
+	// // 응답 본문 읽기
+	// data, err := ioutil.ReadAll(resp.Body)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// 	return
+	// }
+
+	//------------------------------------------------------------
+	// read json file (all-locations.json)
+	//------------------------------------------------------------
+	// JSON 파일 읽기
+	filePath := "all-locations.json"
+	data, err := ioutil.ReadFile(filePath)
 	if err != nil {
-		log.Fatal(err)
-		panic(err)
+		fmt.Println("Failed to read JSON file:", err)
+		return
 	}
 
 	//log.Printf("%s\n", string(data))
